@@ -1635,4 +1635,3 @@ async function preloadFonts(){
     await document.fonts.load("16px 'Helvetica Cn Bold'");
 }
 
-startProgram();
