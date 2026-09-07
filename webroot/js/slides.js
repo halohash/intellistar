@@ -520,15 +520,7 @@ function showSlides() {
 
     if (nidx >= slideFlavor.order.length) {
         nidx = 0;
-        slideCallBack = function () {
-            $("#main").fadeOut(0);
-            audioPlayer.stopPlaying();
-            audioPlayer = null;
-            //URL.revokeObjectURL(songURL);
-            setTimeout(() => {
-                window.location.reload();
-            }, 3000);
-        }
+        slideKickOff()
     }
     currentProgram = slidePrograms[slideFlavor.order[idx].function]
     currentDiv = slideDivs[slideFlavor.order[idx].function]
