@@ -13,9 +13,6 @@ document.addEventListener('DOMContentLoaded', async () =>{
         if(appearanceSettings.marqueeAd[0] == "network"){
             appearanceSettings.marqueeAd = data.crawls.intellistar;
         }
-        if(Number(appearanceSettings.version) < Number(data.simVersions.intellistar)){
-            alert("New update available. Download latest version at\nhttps://github.com/MistWeatherMedia/intellistar-1")
-        }
     })
 
     document.getElementById("uploadsongbutton").addEventListener("click", () =>{
