@@ -615,9 +615,9 @@
         <img class="bg" src="images/domestic.png">
         <div id="basic">
             <div class="box"></div>
-            <div class="boxheader changecolor" style="color: #171717;">INTELLISTAR SIMULATOR</div>
+            <div class="boxheader changecolor" style="color: #171717;">INTELLISTAR</div>
             <div class="version changecolor" style="color: #171717;">v</div>
-            <div class="location changecolor" style="color: #171717;">
+            <div hidden class="location changecolor" style="color: #171717;">
                 <div class="loctext changecolor">Location Name:</div>
                 <input type="text" class="input" id="locsearchlookup" autocomplete="off"
                     placeholder="Search for location here...">
@@ -628,7 +628,8 @@
                 </button>
                 <div class="locsearchtext" style="color: green; display: none;">Location updated!</div>
             </div>
-            <div class="flavor changecolor" style="color: #171717;">
+            <h3 id="promo" class="changecolor" style="color: green;">Please Stand By.</h3>
+            <div hidden class="flavor changecolor" style="color: #171717;">
                 <div class="flavortext changecolor">Flavor:</div>
                 <button id="flavor60" class="flavorbutton" onclick="flavorChanger('60')">
                     <div>60</div>
@@ -644,7 +645,7 @@
                     <div>...</div>
                 </button> -->
             </div>
-            <div class="versions changecolor" style="color: #171717;">
+            <div hidden class="versions changecolor" style="color: #171717;">
                 <div class="versionstext changecolor">Version:</div>
                 <button id="versions2007" class="versionsbutton" onclick="versionsChanger(2007)">
                     <div>2007</div>
@@ -659,7 +660,7 @@
                     <div>2010</div>
                 </button>
             </div>
-            <div class="songs changecolor" style="color: #171717;">
+            <div hidden class="songs changecolor" style="color: #171717;">
                 <div class="songstext changecolor">Song:</div>
                 <select id="songinput">
                     <option value="N"> </option>
@@ -683,11 +684,11 @@
                 <div class="songoffsettext changecolor">Offset:</div>
                 <input id="songoffsetinput" type="number" value="0">
             </div>
-            <div class="enablevl changecolor" style="color: #171717;">
+            <div hidden class="enablevl changecolor" style="color: #171717;">
                 <div class="enablevltext">Enable VocalLocal (BETA):</div>
                 <input type="checkbox" id="enablevlcb">
             </div>
-            <div class="ldloption changecolor" style="color: #171717;">
+            <div hidden class="ldloption changecolor" style="color: #171717;">
                 <div class="ldloptiontext">LDL Type:</div>
                 <button id="ldlbuttonboth" class="ldlbutton" onclick="ldlChanger('both')">
                     <div>Both</div>
@@ -696,12 +697,9 @@
                     <div>Obs</div>
                 </button>
             </div>
-            <button id="startbutton" onclick="startProgram()"
+            <button hidden id="startbutton" onclick="startProgram()"
             style="pointer-events: none; opacity: 0.5;">Start</button>
-            <h3 id="promo" class="changecolor" style="color: #171717;">Created by</h3>
-            <h3 id="promoii" class="changecolor" style="color: #171717;">, brought to you by </h3>
-            <div class="jwx"><a href="https://www.youtube.com/@jensonwx" target="_blank" title="JensonWX"></a></div>
-            <div class="mistpromo"><a href="https://mistwx.com/" target="_blank" title="Mist Weather Media"></a></div>
+            <h3 id="promo" class="changecolor" style="color: #171717;">Hello, World!</h3>
         </div>
         <div id="morelocation" class="changecolor" style="color: #171717;display: none;">
             <div class="box" style></div>
@@ -806,6 +804,12 @@
     </div>
 </body>
 <script>
-startProgram();
+let namac = false
+document.addEventListener("click", (event) => {
+    if (namac === false)
+    console.log("the dom is fully loaded and parsed.");
+    startProgram();
+    namac = true;
+});
 </script>
 </html>
